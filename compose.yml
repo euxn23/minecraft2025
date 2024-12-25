@@ -1,0 +1,19 @@
+services:
+  app:
+    image: itzg/minecraft-server
+    ports:
+      - 25565:25565
+    environment:
+      EULA: "TRUE"
+      MEMORY: 24G
+      TYPE: NEOFORGE
+      VERSION: 1.21.4
+      TZ: Asia/Tokyo
+    volumes:
+      - ./data:/data
+    deploy:
+      resources:
+        limits:
+          memory: 24G
+    restart: always
+
